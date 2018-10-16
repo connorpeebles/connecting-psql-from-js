@@ -22,7 +22,8 @@ function selectPeopleByFirstName(name, callback) {
       return console.error("Error running query", err);
     }
     printPeopleByFirstName(name, rows);
-  });
+  })
+  .finally(() => knex.destroy());
 }
 
 selectPeopleByFirstName(process.argv[2], printPeopleByFirstName);

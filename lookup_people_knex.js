@@ -19,7 +19,7 @@ function selectPeopleByFirstName(name, callback) {
   .orWhere("last_name", name)
   .asCallback((err, rows) => {
     if (err) {
-      return console.error("Error running query", err);
+      return console.error("Error: ", err);
     }
     printPeopleByFirstName(name, rows);
   })
